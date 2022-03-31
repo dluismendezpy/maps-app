@@ -4,7 +4,7 @@ import { View, TextInput, Button, StyleSheet } from "react-native";
 class Form extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { latitude: "", logitude: "", name: "" };
+    this.state = { name: "", latitude: "", longitude: "" };
   }
   render() {
     return (
@@ -17,25 +17,24 @@ class Form extends React.Component {
         <TextInput
           placeholder="Enter lat"
           style={styles.textInput}
+          keyboardType="numbers-and-punctuation"
           onChangeText={(latitude) => this.setState({ latitude })}
         />
         <TextInput
           placeholder="Enter log"
           style={styles.textInput}
+          keyboardType="numbers-and-punctuation"
           onChangeText={(longitude) => this.setState({ longitude })}
         />
         <Button
           title="Send"
           style={styles.button}
           onPress={() =>
-            this.props.navigation.navigate(
-              "MapScreen",
-              {
-                name: this.state.name,
-              },
-              { latitude: this.state.latitude },
-              { longitude: this.state.logitude }
-            )
+            this.props.navigation.navigate("MapScreen", {
+              username: this.state.name,
+              lat: this.state.latitude,
+              long: this.state.longitude,
+            })
           }
         />
       </View>
