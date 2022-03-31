@@ -4,13 +4,17 @@ import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplet
 import MapView, { Callout, Circle, Marker } from "react-native-maps";
 
 export default function MapScreen(props) {
+  let currentName = props.navigation.state.params.username;
+  let currentLatitude = parseFloat(props.navigation.state.params.lat);
+  let currentLongitude = parseFloat(props.navigation.state.params.long);
+
   const [pin, setPin] = React.useState({
-    latitude: 37.78825,
-    longitude: -122.4324,
+    latitude: currentLatitude,
+    longitude: currentLongitude,
   });
   const [region, setRegion] = React.useState({
-    latitude: 37.78825,
-    longitude: -122.4324,
+    latitude: currentLatitude,
+    longitude: currentLongitude,
     latitudeDelta: 0.0922,
     longitudeDelta: 0.0421,
   });
@@ -54,12 +58,14 @@ export default function MapScreen(props) {
       <MapView
         style={styles.map}
         initialRegion={{
-          latitude: props.navigation.state.params.latitude,
-          longitude: props.navigation.state.params.longitude,
+          latitude: currentLatitude,
+          longitude: currentLongitude,
           latitudeDelta: 0.0922,
           longitudeDelta: 0.0421,
         }}
         provider="google"
+        mapType="standard"
+        userInterfaceStyle="light"
       >
         <Marker
           coordinate={{
@@ -82,10 +88,10 @@ export default function MapScreen(props) {
           }}
         >
           <Callout>
-            <Text>I'm here</Text>
+            <Text>{currentName}, esta es tu ubicación</Text>
           </Callout>
         </Marker>
-        <Circle center={pin} radius={1000} />
+        <Circle center={pin} radius={500} />
       </MapView>
     </View>
   );
