@@ -10,27 +10,27 @@ class Form extends React.Component {
     return (
       <View style={styles.container}>
         <TextInput
-          placeholder="Enter name"
+          placeholder="Nombre..."
           style={styles.textInput}
           onChangeText={(name) => this.setState({ name })}
         />
         <TextInput
-          placeholder="Enter lat"
+          placeholder="Latitud..."
           style={styles.textInput}
           keyboardType="numbers-and-punctuation"
           onChangeText={(latitude) => this.setState({ latitude })}
         />
         <TextInput
-          placeholder="Enter log"
+          placeholder="Longitud..."
           style={styles.textInput}
           keyboardType="numbers-and-punctuation"
           onChangeText={(longitude) => this.setState({ longitude })}
         />
         <Button
-          title="Send"
+          title="Enviar"
           style={styles.button}
           onPress={() =>
-            this.props.navigation.navigate("MapScreen", {
+            this.props.navigation.navigate("Mapa", {
               username: this.state.name,
               lat: this.state.latitude,
               long: this.state.longitude,
