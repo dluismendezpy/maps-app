@@ -49,12 +49,11 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   textInput: {
-    margin: 10,
+    margin: 20,
     alignItems: "center",
     height: 40,
-    borderWidth: 1,
+    borderBottomWidth: 1,
     padding: 10,
-    borderRadius: 15,
   },
   button: {
     alignItems: "center",
