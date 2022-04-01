@@ -14,8 +14,8 @@ export default function MapScreen(props) {
   const [region, setRegion] = React.useState({
     latitude: currentLatitude,
     longitude: currentLongitude,
-    latitudeDelta: 0.0922,
-    longitudeDelta: 0.0421,
+    latitudeDelta: 0.01,
+    longitudeDelta: 0.01,
   });
 
   return (
@@ -30,7 +30,15 @@ export default function MapScreen(props) {
         }}
         provider="google"
         mapType="standard"
-        userInterfaceStyle="light"
+        userInterfaceStyle="dark"
+        showsBuildings={true}
+        showsTraffic={true}
+        showsScale={true}
+        showsCompass={true}
+        zoomEnabled={true}
+        loadingEnabled={true}
+        moveOnMarkerPress={true}
+        showsUserLocation={true}
       >
         <Marker
           coordinate={{
@@ -40,7 +48,7 @@ export default function MapScreen(props) {
         />
         <Marker
           coordinate={pin}
-          pinColor="black"
+          pinColor="red"
           draggable={true}
           onDragStart={(e) => {
             console.log("Drag start", e.nativeEvent.coordinates);
@@ -56,7 +64,7 @@ export default function MapScreen(props) {
             <Text>{currentName}, esta es tu ubicación</Text>
           </Callout>
         </Marker>
-        <Circle center={pin} radius={500} />
+        <Circle center={pin} radius={300} />
       </MapView>
     </View>
   );
