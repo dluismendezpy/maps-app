@@ -1,11 +1,11 @@
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
-import Form from "./src/Form";
+import GetData from "./src/GetData";
 import MapScreen from "./src/MapScreen";
 
 const App = createStackNavigator({
-  Form: { screen: Form },
-  MapScreen: { screen: MapScreen },
+  Datos: { screen: GetData },
+  Mapa: { screen: MapScreen },
 });
 
 export default createAppContainer(App);
