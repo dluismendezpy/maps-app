@@ -61,7 +61,7 @@ export default function MapScreen(props) {
           }}
         >
           <Callout>
-            <Text>{currentName}, esta es tu ubicación</Text>
+            <Text>{currentName}, this is your location</Text>
           </Callout>
         </Marker>
         <Circle center={pin} radius={200} />

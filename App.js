@@ -4,8 +4,8 @@ import GetData from "./src/GetData";
 import MapScreen from "./src/MapScreen";
 
 const App = createStackNavigator({
-  Datos: { screen: GetData },
-  Mapa: { screen: MapScreen },
+  Form: { screen: GetData },
+  Map: { screen: MapScreen },
 });
 
 export default createAppContainer(App);

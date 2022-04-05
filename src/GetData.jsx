@@ -30,7 +30,7 @@ export default class Form extends React.Component {
           title="Enviar"
           style={styles.button}
           onPress={() =>
-            this.props.navigation.navigate("Mapa", {
+            this.props.navigation.navigate("Map", {
               username: this.state.name,
               lat: this.state.latitude,
               long: this.state.longitude,
