@@ -25,8 +25,8 @@ export default function MapScreen(props) {
         initialRegion={{
           latitude: currentLatitude,
           longitude: currentLongitude,
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
+          latitudeDelta: 0.01,
+          longitudeDelta: 0.01,
         }}
         provider="google"
         mapType="standard"
@@ -64,7 +64,7 @@ export default function MapScreen(props) {
             <Text>{currentName}, esta es tu ubicación</Text>
           </Callout>
         </Marker>
-        <Circle center={pin} radius={300} />
+        <Circle center={pin} radius={200} />
       </MapView>
     </View>
   );

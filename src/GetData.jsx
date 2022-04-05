@@ -1,7 +1,7 @@
 import React from "react";
 import { View, TextInput, Button, StyleSheet } from "react-native";
 
-class Form extends React.Component {
+export default class Form extends React.Component {
   constructor(props) {
     super(props);
     this.state = { name: "", latitude: "", longitude: "" };
@@ -65,5 +65,3 @@ const styles = StyleSheet.create({
     backgroundColor: "black",
   },
 });
-
-export default Form;
